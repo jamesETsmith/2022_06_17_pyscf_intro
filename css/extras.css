@@ -1,0 +1,29 @@
+/* Columns */
+.cols {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    font-size: 0.75em;
+}
+
+.reveal h1 {
+    font-size: 1.6em;
+}
+
+.reveal h2 {
+    font-size: 1.3em;
+}
+
+.reveal h3 {
+    font-size: 1em;
+}
+
+.reveal h4 {
+    font-size: 0.8em;
+}
+
+.reveal h1 {
+    text-shadow: none;
+}
