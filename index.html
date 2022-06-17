@@ -37,7 +37,7 @@
 
 				<div class="cols">
 					<div class="col">
-						<div style="height: 200px;" class='viewer_3Dmoljs' data-datatype='pdb'
+						<div style="height: 200px; width:350px" class='viewer_3Dmoljs' data-datatype='pdb'
 							data-backgroundcolor='0xf4f4f4'
 							data-href='https://raw.githubusercontent.com/jamesETsmith/molecule_library/main/pdb/fe_pdi.pdb'
 							data-style='stick;sphere:radius~0.5;' data-spin="axis:y">
@@ -45,7 +45,7 @@
 					</div>
 
 					<div class="col">
-						<div style="height: 200px;" class='viewer_3Dmoljs' data-datatype='xyz'
+						<div style="height: 200px; width:350px" class='viewer_3Dmoljs' data-datatype='xyz'
 							data-backgroundcolor='0xf4f4f4'
 							data-href='https://raw.githubusercontent.com/jamesETsmith/molecule_library/main/xyz/nv-.xyz'
 							data-style='stick;sphere:radius~0.5;' data-spin="axis:y">
@@ -75,7 +75,9 @@
 						<ul style="font-size: 0.8em;">
 							<li>Zhihao Cui (Caltech)</li>
 							<li>Yang Gao (Caltech)</li>
-							<li>James Smith (Flatiron Institute)</li>
+							<li><b>James Smith (Flatiron Institute)</b></li>
+							<li><b>Verena Neufeld (Columbia)</b></li>
+							<li><b>Hong-Zhou Ye (Columbia)</b></li>
 							<li>Xiao Wang (UC Santa Cruz)</li>
 							<li>Susi Lehtola (MolSSI)</li>
 						</ul>
@@ -243,11 +245,11 @@ cc_energy = cc.kernel()</code></pre>
 				<h1>Custom Hamiltonians</h1>
 				<pre><code data-trim class="language-python" style="max-height:100% !important; width: 100%;">h1 = numpy.zeros((n,n))
 for i in range(n-1):
-h1[i,i+1] = h1[i+1,i] = -1.0
-h1[n-1,0] = h1[0,n-1] = -1.0
+    h1[i,i+1] = h1[i+1,i] = -1.0
+    h1[n-1,0] = h1[0,n-1] = -1.0
 eri = numpy.zeros((n,n,n,n))
 for i in range(n):
-eri[i,i,i,i] = 2.0
+    eri[i,i,i,i] = 2.0
 
 mf = scf.RHF(mol)
 mf.get_hcore = lambda *args: h1
@@ -342,7 +344,7 @@ mycas.kernel()</code></pre>
 						<pre><code  class="language-bash">git clone https://github.com/pyscf/pyscf.git
 cd pyscf/pyscf/lib
 cmake -B build
-cmake --build build --parallel
+cmake --build build --parallel                        
 							</code></pre>
 					</div>
 				</div>
